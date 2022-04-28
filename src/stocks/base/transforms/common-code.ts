@@ -1,9 +1,22 @@
 // Utils
-import { ERROR_COMMON_CODE, ERROR_UNDEFINED_SZ_COMMON_CODE, ERROR_UNDEFINED_SH_COMMON_CODE, ERROR_UNDEFINED_HK_COMMON_CODE, ERROR_UNDEFINED_US_COMMON_CODE } from "@utils/constant";
+import {
+  ERROR_COMMON_CODE,
+  ERROR_UNDEFINED_SZ_COMMON_CODE,
+  ERROR_UNDEFINED_SH_COMMON_CODE,
+  ERROR_UNDEFINED_HK_COMMON_CODE,
+  ERROR_UNDEFINED_US_COMMON_CODE,
+  ERROR_UNDEFINED_FUND_COMMON_CODE,
+} from "@utils/constant";
 
 // Types
 import CommonCodeTransform from "types/stocks/transforms/common-code";
-import { COMMON_SH, COMMON_SZ, COMMON_HK, COMMON_US } from "../utils/constant";
+import {
+  COMMON_SH,
+  COMMON_SZ,
+  COMMON_HK,
+  COMMON_US,
+  COMMON_FUND,
+} from "../utils/constant";
 
 /**
  * 【基础】统一代码转换股票代码
@@ -28,6 +41,10 @@ class BaseCommonCodeTransform implements CommonCodeTransform {
 
     if (code.indexOf(COMMON_US) === 0) {
       return this.USTransform(code);
+    }
+
+    if (code.indexOf(COMMON_FUND) === 0) {
+      return this.FUNDTransform(code);
     }
 
     throw new Error(ERROR_COMMON_CODE);
@@ -71,6 +88,14 @@ class BaseCommonCodeTransform implements CommonCodeTransform {
    */
   public USTransform(code: string): string {
     throw new Error(ERROR_UNDEFINED_US_COMMON_CODE);
+  }
+
+  /**
+   * 美交所统一代码转换股票代码
+   * @param code 统一代码
+   */
+  public FUNDTransform(code: string): string {
+    throw new Error(ERROR_UNDEFINED_FUND_COMMON_CODE);
   }
 }
 

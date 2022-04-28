@@ -1,5 +1,6 @@
 // Stocks
 import BaseStockTransform from "@stocks/base/transforms/stock";
+import { COMMON_FUND } from "@stocks/base/utils/constant";
 
 // Utils
 import { DEFAULT_STRING, DEFAULT_NUMBER } from "@utils/constant";
@@ -71,8 +72,21 @@ class TencentStockTransform extends BaseStockTransform {
    * 获取股票数据
    */
   getStock(): Stock {
+    const code = this.getCode();
+    if (code.indexOf(COMMON_FUND) !== -1) {
+      // '100032~富国中证红利指数增强A~0.9810~0.0000~2022-04-28 15:00:00~0.9950~2.9940~1.4271~2022-04-28~'
+      return {
+        code,
+        name: this.getName(),
+        percent: Number(this.params[7] || DEFAULT_NUMBER),
+        now: Number(this.params[5] || DEFAULT_NUMBER),
+        low: DEFAULT_NUMBER,
+        high: DEFAULT_NUMBER,
+        yesterday: Number(this.params[2] || DEFAULT_NUMBER),
+      };
+    }
     return {
-      code: this.getCode(),
+      code,
       name: this.getName(),
       percent: this.getPercent(),
 

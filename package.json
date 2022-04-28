@@ -1,7 +1,7 @@
 {
-  "name": "stock-api",
-  "version": "2.0.5",
-  "description": "【韭菜小猪】免费股票数据分析相关接口",
+  "name": "linxiaowu-stock-api",
+  "version": "2.1.0",
+  "description": "免费股票数据分析相关接口",
   "keywords": [
     "股票",
     "数据分析",
@@ -9,8 +9,8 @@
   ],
   "main": "dist/index.js",
   "types": "types/index.d.ts",
-  "repository": "https://github.com/jiucaixiaozhu/stock-api",
-  "author": "zhangxiangliang",
+  "repository": "https://github.com/linxiaowu66/stock-api",
+  "author": "linxiaowu66",
   "license": "MIT",
   "files": [
     "dist/**/*",

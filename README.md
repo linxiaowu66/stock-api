@@ -8,6 +8,8 @@
   <a href="https://www.npmjs.com/package/stock-api"><img src="https://img.shields.io/badge/language-typescript-blue" alt="License"></a>
 </p>
 
+> 在原有的功能上加上支持基金查询，目前测试了一下只有腾讯的接口支持，所以暂时加在腾讯的接口上
+> 使用 FUND100032 即可查到对应的基金
 
 
 ## 简介

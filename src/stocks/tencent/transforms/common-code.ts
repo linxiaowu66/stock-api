@@ -3,8 +3,20 @@ import BaseCommonCodeTransform from "@stocks/base/transforms/common-code";
 
 // Utils
 import { ERROR_COMMON_CODE } from "@utils/constant";
-import { COMMON_SH, COMMON_SZ, COMMON_HK, COMMON_US } from "@stocks/base/utils/constant";
-import { TENCENT_SZ, TENCENT_SH, TENCENT_HK, TENCENT_US } from "@stocks/tencent/utils/constant";
+import {
+  COMMON_SH,
+  COMMON_SZ,
+  COMMON_HK,
+  COMMON_US,
+  COMMON_FUND,
+} from "@stocks/base/utils/constant";
+import {
+  TENCENT_SZ,
+  TENCENT_SH,
+  TENCENT_HK,
+  TENCENT_US,
+  TENCENT_FUND,
+} from "@stocks/tencent/utils/constant";
 
 /**
  * 【腾讯】统一代码转换股票代码
@@ -79,6 +91,18 @@ class TencentCommonCodeTransform extends BaseCommonCodeTransform {
     }
 
     return TENCENT_US + code.replace(COMMON_US, "").toUpperCase();
+  }
+
+  /**
+   * 国内统一代码转换基金代码
+   * @param code 统一代码
+   */
+  public FUNDTransform(code: string): string {
+    if (!code.includes(COMMON_FUND)) {
+      throw new Error(ERROR_COMMON_CODE);
+    }
+
+    return TENCENT_FUND + code.replace(COMMON_FUND, "").toUpperCase();
   }
 }
 
