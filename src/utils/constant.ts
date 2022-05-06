@@ -47,4 +47,5 @@ export const DEFAULT_STOCK = {
   low: DEFAULT_NUMBER,
   high: DEFAULT_NUMBER,
   yesterday: DEFAULT_NUMBER,
+  updateDate: "",
 };
