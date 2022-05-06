@@ -7,7 +7,7 @@ export interface Stock {
   high: number;
   percent: number;
   yesterday: number;
-  updateDate: string;
+  updateDate?: string;
 }
 
 export default Stock;

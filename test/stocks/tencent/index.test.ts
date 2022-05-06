@@ -38,9 +38,6 @@ describe("【腾讯】股票代码接口", () => {
         expect.objectContaining({
           code: "FUND100032",
           name: "富国中证红利指数增强A",
-          percent: 1.4271,
-          now: 0.995,
-          yesterday: 0.981,
         }),
       ])
     );
