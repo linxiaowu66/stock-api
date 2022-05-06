@@ -106,7 +106,7 @@ class TencentStockTransform extends BaseStockTransform {
     if (code.indexOf(COMMON_US) !== -1) {
       updateDate = this.params[30].split(" ")[0];
     } else if (code.indexOf(COMMON_HK) !== -1) {
-      updateDate = this.params[30].split(" ")[0].replace("/", "-");
+      updateDate = this.params[30].split(" ")[0].replace(/\//g, "-");
     } else {
       updateDate = `${this.params[30].slice(0, 4)}-${this.params[30].slice(
         4,
